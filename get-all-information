@@ -1,0 +1,5 @@
+sudo apt install git
+git clone https://github.com/KittyKatt/screenFetch.git
+cd screenFetch
+chmod +x screenfetch-dev
+./screenfetch-dev
