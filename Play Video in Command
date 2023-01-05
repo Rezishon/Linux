@@ -1,0 +1,9 @@
+The syntax to open any file in its default application is
+
+xdg-open <file_name>
+
+If you want to have some fun and play the video in the terminal itself, install mplayer (sudo apt-get install mplayer) and run
+
+mplayer -vo caca <movie_file>
+
+It doesn't run directly in the terminal window, but it does display in ASCII characters.
