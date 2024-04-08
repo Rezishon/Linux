@@ -13,4 +13,12 @@ This file Is a guide file. Each action related to a file => [F]ile [N]umber [XXX
 6. Config .zshrc
 
 7. Config .vimrc
+
+8. Config local git
+
+9. Config connection to Github
+
+10. Config ssh of VsCode
+
+11. Install Dotnet
     
