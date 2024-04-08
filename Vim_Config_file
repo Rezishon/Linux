@@ -1,6 +1,5 @@
 # Just rename the file and it will work
 
-
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -27,6 +26,15 @@ set nobackup
 
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
 set nowrap
+
+" Set shift width to 4 spaces.
+set shiftwidth=4
+
+" Set tab width to 4 columns.
+set tabstop=4
+
+" Use space characters instead of tabs.
+set expandtab
 
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
