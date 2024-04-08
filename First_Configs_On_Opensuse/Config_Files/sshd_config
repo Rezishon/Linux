@@ -1,11 +1,11 @@
-            Port 2200
-            HostKey /etc/ssh/ssh_host_rsa_key
-            HostKey /etc/ssh/ssh_host_dsa_key
-            HostKey /etc/ssh/ssh_host_ecdsa_key
-            SyslogFacility AUTH
-            LogLevel INFO
-            LoginGraceTime 120
-            PermitRootLogin yes
-            StrictModes yes
-            X11Forwarding yes
-            X11DisplayOffset 10
+Port 2200
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+SyslogFacility AUTH
+LogLevel INFO
+LoginGraceTime 120
+PermitRootLogin yes
+StrictModes yes
+X11Forwarding yes
+X11DisplayOffset 10
