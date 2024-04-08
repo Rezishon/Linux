@@ -1,0 +1,38 @@
+Server:
+
+    Check ssh version by: 
+        ssh -V (if it returns number ssh is installed already unless we should install it)
+
+    Start SSH:
+        sudo systemctl start ssh
+
+    Create config file:
+        sudo vim /etc/ssh/sshd_config(Then add these lines):
+        ! File is available in ./Config_Files/
+
+            Port 2200
+            HostKey /etc/ssh/ssh_host_rsa_key
+            HostKey /etc/ssh/ssh_host_dsa_key
+            HostKey /etc/ssh/ssh_host_ecdsa_key
+            SyslogFacility AUTH
+            LogLevel INFO
+            LoginGraceTime 120
+            PermitRootLogin yes
+            StrictModes yes
+            X11Forwarding yes
+            X11DisplayOffset 10
+
+    Reload SSH:
+        sudo systemctl reload ssh
+
+Client: 
+        Create SSH Key:
+            ssh-keygen -t rsa
+
+        Check if the key has created:
+            cd ~/.ssh
+            ls -l
+            (The rsa file should be available)
+        
+        Transfer public key to server:
+            ssh-copy-id [remote_host]

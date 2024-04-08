@@ -1,0 +1,16 @@
+This file Is a guide file. Each action related to a file => [F]ile [N]umber [XXX]
+
+1. Remove Grub time out: FN001
+
+2. SSH: FN002
+
+3. Install Tmux
+
+4. Install zsh
+
+5. Install oh-my-zsh
+
+6. Config .zshrc
+
+7. Config .vimrc
+    

@@ -1,0 +1,4 @@
+Remove Grub time out by:
+    sudo vim /etc/default/grub
+    => GRUB_TIMEOUT=0
+    sudo grub2-mkconfig -o /boot/grub2/grub.cfg
