@@ -1,5 +1,3 @@
-# Just rename the file and it will work
-
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
