@@ -1,0 +1,80 @@
+#!/bin/zsh
+
+#region Variable declarations
+
+git_message='From linux Pc'
+local_path='/home/rezishon/Documents/Obsidian/'
+icon_path=~/.local/share/icons/candy-icons/apps/scalable/obsidian.svg
+temp_path=/tmp/ObsidianSyncerFile.tmp
+message=""
+date=""
+
+#endregion
+
+#region Function Sources
+
+Notification_Sender() {
+    notify-send -i $icon_path -u normal "Obsidian Synced" $message -a "Obsidian Syncer"
+}
+
+TempFile_Builder() {
+    touch $temp_path
+}
+
+Git_Job() {
+    cd $local_path
+
+    git pull origin 2>> $temp_path 
+    git fetch origin 2>> $temp_path 
+    git add . 2>> $temp_path  
+    git commit -q -m $git_message 2>> $temp_path 
+
+    for i in {1.3}
+    do
+        git push origin 2>> $temp_path 
+    done
+}
+
+Message_Builder() {
+    date=$(git log -1 --format="%cd" --date=format:'%Y-%m-%d %H:%M:%S')
+    message="Last change was: <i>$date</i>"
+}
+
+Byte_Counter() {
+    echo $(wc -c < $temp_path)
+}
+
+Message_Setter() {
+    message+=$1
+}
+
+Error_Handler() {
+    if [ $(Byte_Counter) -eq 22 ]; then
+        Message_Setter "\n<b><i> All Good :)</b></i>"
+    else
+    echo "============"
+        Message_Setter "\n$(cat $temp_path)"
+    fi
+}
+
+TempFile_Remover() {
+    rm $temp_path  
+}
+
+#endregion
+
+#region Function calls
+
+TempFile_Builder
+
+Git_Job
+
+Message_Builder 
+
+Error_Handler
+
+Notification_Sender
+
+TempFile_Remover
+
+#endregion
