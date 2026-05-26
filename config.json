@@ -1,0 +1,31 @@
+{
+  "log": { "loglevel": "warning" },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "df00fa8c-f559-430f-bbc8-cb527a8595fe",
+            "flow": "xtls-rprx-vision"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "dest": "www.bale.ai:443",
+          "xver": 0,
+          "serverNames": ["www.bale.ai", "bale.ai"],
+          "privateKey": "YCzSXVmI_rSBe3q-RdJky2WkEH3SOMRo0rWQ0QGmG0Y",
+          "shortIds": ["0123456789abcdef"]
+        }
+      }
+    }
+  ]
+}
+
